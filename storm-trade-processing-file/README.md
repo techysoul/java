@@ -53,5 +53,5 @@ mvn clean eclipse:clean install eclipse:eclipse
 [1]: http://activemq.apache.org
 [2]: https://github.com/techysoul/java/tree/master/spring-jms-tradegen
 [3]: https://maven.apache.org
-[4]: https://github.com/techysoul/java/blob/master/storm-trade-processing/pom.xml
+[4]: https://github.com/techysoul/java/blob/master/storm-trade-processing-file/pom.xml
 [5]: https://www.techysoul.com/java/setting-up-storm-cluster-in-local-machine
