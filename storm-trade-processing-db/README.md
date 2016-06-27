@@ -1,4 +1,4 @@
-##Storm Trade Processing - FileStore
+##Storm Trade Processing - Database
 
 ###Description
 Storm Trade Processing consists of an Apache Storm Topology that listens to a JMS Topic for incoming trades in the form a csv message. Each trade is passed to check eligibility depending on the legal entity code from the message. All eligible trades are then persisted into report.txt and in-eligible trades are persisted into exclusion.txt at the specified path.
@@ -20,10 +20,10 @@ Storm Trade Processing consists of an Apache Storm Topology that listens to a JM
     CheckEligibility -> TradeExclusionPersistenceBolt [style=bold,label="No"];
     CheckEligibility [label="Check Eligibility"];
     node [shape=box,style=filled,color=".7 .3 1.0"];
-    edge [color=blue];
-    TradeCollectorSpout -> Database;
-    edge [color=green];
     FileStoreDatabase [label="FileStore / Database"];
+    edge [color=blue];
+    TradeCollectorSpout -> FileStoreDatabase;
+    edge [color=green];
     TradeReportPersistenceBolt -> FileStoreDatabase;
     edge [color=red];
     TradeExclusionPersistenceBolt -> FileStoreDatabase;
